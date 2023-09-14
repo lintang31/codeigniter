@@ -7,20 +7,19 @@ class Auth extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_model');
+		$this->load->helper('my_helper');
 	}
 
 	public function index()
 	{
 		$this->load->view('auth/login');
 	}
-	
-	public function login()
+
+	public function aksi_login()
 	{
-		$email 	  = $this->input->post('email', true);
+		$email  = $this->input->post('email', true);
 		$password = $this->input->post('password', true);
-		$data  	  = [
-		 'email'  => $email,
-		];
+		$data = [ 'email'  => $email, ];
 		$query = $this->m_model->getwhere('admin', $data);
 		$result = $query->row_array();
 
@@ -46,5 +45,5 @@ class Auth extends CI_Controller {
 	function logout(){
 		$this->session->sess_destroy();
 		redirect(base_url('auth'));
-	  }
+	}
 }

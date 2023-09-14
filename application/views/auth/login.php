@@ -14,7 +14,7 @@
             <h1 class="my-3 text-4xl font-bold">Sign in</h1>
             <p class="text-sm dark:text-gray-400">Sign in to access your account</p>
         </div>
-        <form action="<?php echo base_url(); ?>Auth/login" method="post" class="space-y-12">
+        <form action="<?php echo base_url(); ?>Auth/aksi_login" method="post" class="space-y-12">
             <div class="space-y-4">
                 <div>
                     <label for="email" class="block mb-2 text-sm">Email address</label>

@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <h1 class="my-5 text-2xl font-bold">Selamat Datang <?php echo $this->session->userdata('username')?></h1>
-    <a href="<?php echo base_url('auth/logout');?>"
+    <h1 class="my-5 text-2xl font-bold">Selamat Datang <?php echo $this->session->userdata('id')?></h1>
+    <a href="<?php echo base_url('Auth/logout');?>"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Logout
     </a>
