@@ -14,4 +14,10 @@ class M_model extends CI_Model{
         $data=$this->db->delete($table, array($field => $id));
         return $data;
     }
+
+    public function tambah_data($table, $data)
+    {
+        $this->db->insert($table, $data);
+        return $this->db->insert_id();
+    }
 }

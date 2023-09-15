@@ -39,7 +39,6 @@ class Admin extends CI_Controller
             'gender' => $this->input->post('gender'),
             'id_kelas' => $this->input->post('kelas'),
         ];
-
         $this->m_model->tambah_data('siswa', $data);
         redirect(base_url('admin/siswa'));
 	}
