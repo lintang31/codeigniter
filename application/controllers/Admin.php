@@ -44,6 +44,12 @@ class Admin extends CI_Controller
         redirect(base_url('admin/siswa'));
 	}
 
+	public function update_siswa()
+	{
+		$data['kelas'] = $this->m_model->get_data('kelas')->result();
+		$this->load->view('admin/update_siswa', $data);
+	}
+
 	public function hapus_siswa($id)
     {
         $this->m_model->delete('siswa', 'id_siswa', $id);

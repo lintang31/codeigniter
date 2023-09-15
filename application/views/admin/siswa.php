@@ -63,6 +63,11 @@
                                     class="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700">
                                     Hapus
                                 </button>
+                                <br>
+                                <button type="submit"
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
+                                    Tambah
+                                </button>
                             </td>
                         </tr>
                         <?php endforeach ?>
