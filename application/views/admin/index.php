@@ -9,11 +9,35 @@
 </head>
 
 <body>
-    <h1 class="my-5 text-2xl font-bold">Selamat Datang <?php echo $this->session->userdata('id')?></h1>
-    <a href="<?php echo base_url('Auth/logout');?>"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Logout
-    </a>
+    <div class="flex">
+        <div>
+            <?php $this->load->view('components/sidebar')?>
+        </div>
+
+        <div class="container mt-12">
+            <?php $this->load->view('components/navbar')?>
+            <div class="overflow-x-auto">
+                <div class="grid grid-cols-4 gap-4 w-full">
+                    <div class="h-32 rounded-lg bg-gray-100 w-60">
+                        <p class="text-xl ml-4 mt-2 font-medium">Jumlah Kelas</p>
+                        <p class="ml-4 mt-4 text-3xl font-semibold">13</p>
+                    </div>
+                    <div class="h-32 rounded-lg bg-gray-100 w-60">
+                        <p class="text-xl ml-4 mt-2 font-medium">Jumlah Siswa</p>
+                        <p class="ml-4 mt-4 text-3xl font-semibold">1287</p>
+                    </div>
+                    <div class="h-32 rounded-lg bg-gray-100 w-60">
+                        <p class="text-xl ml-4 mt-2 font-medium">Jumlah Mapel</p>
+                        <p class="ml-4 mt-4 text-3xl font-semibold">9</p>
+                    </div>
+                    <div class="h-32 rounded-lg bg-gray-100 w-60">
+                        <p class="text-xl ml-4 mt-2 font-medium">Jumlah Guru</p>
+                        <p class="ml-4 mt-4 text-3xl font-semibold">36</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
