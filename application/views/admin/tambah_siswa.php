@@ -11,12 +11,7 @@
 
 <body>
     <div class="flex">
-        <div>
-            <?php $this->load->view('components/sidebar')?>
-        </div>
-
         <div class="container mt-12">
-            <?php $this->load->view('components/navbar')?>
             <div class="overflow-x-auto">
                 <form action="<?php echo base_url('admin/aksi_tambah_siswa') ?>" enctype="multipart/form-data"
                     method="post">
@@ -65,7 +60,7 @@
                                         <?php endforeach ?>
                                     </select>
                                 </div>
-                                <button type="submit"
+                                    <button type="submit"
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
                                     Tambah
                                 </button>
@@ -78,4 +73,5 @@
     </div>
 </body>
 
-</html>
+</html
+
