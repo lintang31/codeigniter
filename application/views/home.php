@@ -11,29 +11,26 @@
 
 <body>
 
-    <header class="relative bg-[url(https://binusasmg.sch.id/ppdb/images/binus2.jpg)] bg-cover bg-center bg-no-repeat ">
+    <header class="relative bg-[url(https://smkbinusademak.sch.id/wp-content/uploads/2023/03/photo_6073152918858610129_y.jpg)] bg-cover bg-center bg-no-repeat ">
         <section class="bg-black/50">
 
             <div
-                class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-                <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+                class="relative mx-auto max-w-screen-xl px-6 py-15 sm:px-18 lg:flex lg:h-screen lg:items-center lg:px-15">
+                <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-orange">
                     <h1 class="text-3xl font-extrabold sm:text-5xl text-neutral-100">
-                        Ayo Sekolah Di
-
-                        <strong class="block font-extrabold text-rose-700">
-                            SMK Bina Nusantara Semarang
+                        Ayo masuk di
+                        <strong class="block font-extrabold text-orange-700">
+                            SMK Bina Nusantara Mranggen
                         </strong>
                     </h1>
 
                     <p class="mt-4 max-w-lg sm:text-xl/relaxed text-neutral-100">
-                        Cerdas, Santun, dan Berbudi Luhur
                         SMK Bina Nusantara Adalah sebuah Sekolah Menengah Kejuruan yang didirikan oleh Yayasan Harapan
-                        Bangsa sejak 9 Mei 2009, yang berlokasi di Ungaran, Adapun Motto dari SMK Bina Nusantara yaitu
-                        Cerdas, Santun dan Berbudi Luhur.
+                         yang berlokasi di Mranggen, 
                     </p>
 
                     <div class="mt-8 flex flex-wrap gap-4 text-center">
-                        <a href="#"
+                        <a href="register"
                             class="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto">
                             Register
                         </a>
