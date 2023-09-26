@@ -7,19 +7,20 @@
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<style>
-    body {
-        background-image: url("https://bintangsempurna.co.id/uploads/posts/Hiasan_dinding_estetik_putih_vintage_polaroid_foto.jpg");
-    }
-</style>
+
 <body class="flex min-h-screen justify-center items-center bg-black/50">
     <div class="flex flex-col w-1/3 p-6 h-1/2 rounded-md sm:p-10  dark:text-gray-100">
         <div class="mb-8 text-center">
-            <h1 class="my-3 text-4xl font-bold"> Login</h1>
-            <p class="text-sm dark:text-gray-400">Silahkan login boskuee</p>
+            <h1 class="my-3 text-4xl font-bold"> Register</h1>
         </div>
-        <form action="<?php echo base_url(); ?>Auth/process_login" method="post" class="space-y-12">
+        <form action="<?php echo base_url(); ?>Auth/process_register" method="post" class="space-y-12">
             <div class="space-y-4">
+            <div>
+                    <label for="email" class="block mb-2 text-sm">Username </label>
+                    <input type="email" name="email" id="email" placeholder=" email" autocomplete="off"
+                        class="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
+                        fdprocessedid="kq4yx">
+                </div>
                 <div>
                     <label for="email" class="block mb-2 text-sm">Email </label>
                     <input type="email" name="email" id="email" placeholder=" email" autocomplete="off"
@@ -29,10 +30,7 @@
                 <div>
                     <div class="flex justify-between mb-2">
                         <label for="password" class="text-sm">Password</label>
-<<<<<<< HEAD
-=======
                         <a rel="noopener noreferrer" href="#" class="text-xs hover:underline dark:text-gray-400">Forgot</a>
->>>>>>> 02138611561f37fd2871548b21baa2f5346fe0fe
                     </div>
                     <input type="password" name="password" id="password" placeholder=" password"
                         autocomplete="off"
@@ -44,15 +42,10 @@
                 <div>
                     <button type="submit"
                         class="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900"
-                        fdprocessedid="r78vz9">login</button>
+                        fdprocessedid="r78vz9">register</button>
                 </div>
-<<<<<<< HEAD
-                <p class="px-6 text-sm text-center dark:text-gray-400">
-                    <a rel="noopener noreferrer" href="<?php echo base_url('auth/register'); ?>" class="hover:underline dark:text-violet-400">daftar</a>.
-=======
                 <p class="px-6 text-sm text-center dark:text-gray-400">apakah anda belum punya akun?
                     <a rel="noopener noreferrer" href="#" class="hover:underline dark:text-violet-400">daftar</a>.
->>>>>>> 02138611561f37fd2871548b21baa2f5346fe0fe
                 </p>
             </div>
         </form>
