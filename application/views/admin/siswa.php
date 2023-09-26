@@ -25,6 +25,9 @@
                                 No
                             </th>
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
+                                Foto siswa
+                            </th>
+                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
                                 Nama Siswa
                             </th>
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
@@ -48,12 +51,14 @@
                         <tr>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $no ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                <?php echo $row->nama_siswa ?>
+                                <img src="<?php echo base_url('images/siswa/'.$row->foto) ?>" width="50">
                             </td>
+                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nama_siswa ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nisn ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700">
                                 <?php echo tampil_full_kelas_byid($row->id_kelas) ?></td>
+                            </td>
                             <td class="whitespace-nowrap px-4 py-2 text-center">
                                 <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa?>"
                                     class="inline-block rounded bg-sky-600 px-4 py-2 text-xs font-medium text-white hover:bg-sky-700">
@@ -63,10 +68,10 @@
                                     class="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700">
                                     Hapus
                                 </button>
-                                <a href="<?php echo base_url('admin/tambah_siswa'); ?>" type="submit" 
+                                <a href="<?php echo base_url('admin/tambah_siswa'); ?>" type="submit"
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
                                     Tambah
-                                </button>
+                                    </button>
                             </td>
                         </tr>
                         <?php endforeach ?>
