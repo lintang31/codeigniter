@@ -8,10 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
-    body {
-        background-image: url("https://bintangsempurna.co.id/uploads/posts/Hiasan_dinding_estetik_putih_vintage_polaroid_foto.jpg");
-    }
+body {
+    background-image: url("https://bintangsempurna.co.id/uploads/posts/Hiasan_dinding_estetik_putih_vintage_polaroid_foto.jpg");
+}
 </style>
+
 <body class="flex min-h-screen justify-center items-center bg-black/50">
     <div class="flex flex-col w-1/3 p-6 h-1/2 rounded-md sm:p-10  dark:text-gray-100">
         <div class="mb-8 text-center">
@@ -29,13 +30,9 @@
                 <div>
                     <div class="flex justify-between mb-2">
                         <label for="password" class="text-sm">Password</label>
-<<<<<<< HEAD
-=======
-                        <a rel="noopener noreferrer" href="#" class="text-xs hover:underline dark:text-gray-400">Forgot</a>
->>>>>>> 02138611561f37fd2871548b21baa2f5346fe0fe
+                        <a rel="noopener noreferrer" href="#">
                     </div>
-                    <input type="password" name="password" id="password" placeholder=" password"
-                        autocomplete="off"
+                    <input type="password" name="password" id="password" placeholder=" password" autocomplete="off"
                         class="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
                         fdprocessedid="3gj54k">
                 </div>
@@ -46,13 +43,13 @@
                         class="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900"
                         fdprocessedid="r78vz9">login</button>
                 </div>
-<<<<<<< HEAD
+
                 <p class="px-6 text-sm text-center dark:text-gray-400">
-                    <a rel="noopener noreferrer" href="<?php echo base_url('auth/register'); ?>" class="hover:underline dark:text-violet-400">daftar</a>.
-=======
+                    <a rel="noopener noreferrer" href="<?php echo base_url('auth/register'); ?>"
+                        class="hover:underline dark:text-violet-400">daftar</a>.
+
                 <p class="px-6 text-sm text-center dark:text-gray-400">apakah anda belum punya akun?
-                    <a rel="noopener noreferrer" href="#" class="hover:underline dark:text-violet-400">daftar</a>.
->>>>>>> 02138611561f37fd2871548b21baa2f5346fe0fe
+                    <a rel="noopener noreferrer" href="#" class="hover:underline dark:text-violet-400">daftar</a>
                 </p>
             </div>
         </form>

@@ -58,7 +58,7 @@ class Admin extends CI_Controller {
      'nama_siswa' => $this->input->post('nama'),
      'nisn' => $this->input->post('nisn'),
      'gender' => $this->input->post('gender'),
-     'id_kelas' => $this->input->post('id_kelas'),
+     'id_kelas' => $this->input->post('kelas'),
     ];
     $this->m_model->tambah_data('siswa', $data);
     redirect(base_url('admin/siswa'));
@@ -68,7 +68,7 @@ class Admin extends CI_Controller {
      'nama_siswa' => $this->input->post('nama'),
      'nisn' => $this->input->post('nisn'),
      'gender' => $this->input->post('gender'),
-     'id_kelas' => $this->input->post('id_kelas'),
+     'id_kelas' => $this->input->post('kelas'),
     ];
   
     $this->m_model->tambah_data('siswa', $data);

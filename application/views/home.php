@@ -11,7 +11,8 @@
 
 <body>
 
-    <header class="relative bg-[url(https://smkbinusademak.sch.id/wp-content/uploads/2023/03/photo_6073152918858610129_y.jpg)] bg-cover bg-center bg-no-repeat ">
+    <header
+        class="relative bg-[url(https://i.ytimg.com/vi/5rvO2cpzZZM/maxresdefault.jpg)] bg-cover bg-center bg-no-repeat ">
         <section class="bg-black/50">
 
             <div
@@ -19,34 +20,23 @@
                 <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-orange">
                     <h1 class="text-3xl font-extrabold sm:text-5xl text-neutral-100">
                         Ayo masuk di
-<<<<<<< HEAD
+
                         <strong class="block font-extrabold text-rose-700">
-=======
-                        <strong class="block font-extrabold text-orange-700">
->>>>>>> 02138611561f37fd2871548b21baa2f5346fe0fe
-                            SMK Bina Nusantara Mranggen
-                        </strong>
+
+                            <strong class="block font-extrabold text-orange-700">
+
+                                SMK Bina Nusantara Mranggen
+                            </strong>
                     </h1>
 
                     <p class="mt-4 max-w-lg sm:text-xl/relaxed text-neutral-100">
                         SMK Bina Nusantara Adalah sebuah Sekolah Menengah Kejuruan yang didirikan oleh Yayasan Harapan
-<<<<<<< HEAD
-                         yang berlokasi di Mranggen, Adapun Motto dari SMK Bina Nusantara yaitu
+                        yang berlokasi di Mranggen, Adapun Motto dari SMK Bina Nusantara yaitu
                         Cerdas, Santun dan Berbudi Luhur.
                     </p>
 
                     <div class="mt-8 flex flex-wrap gap-4 text-center">
-=======
-                         yang berlokasi di Mranggen, 
-                    </p>
-
-                    <div class="mt-8 flex flex-wrap gap-4 text-center">
-                        <a href="register"
-                            class="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto">
-                            Register
-                        </a>
-
->>>>>>> 02138611561f37fd2871548b21baa2f5346fe0fe
+                        </p>
                         <a href="auth"
                             class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto">
                             Login

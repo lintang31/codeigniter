@@ -12,38 +12,45 @@
 </head>
 
 <body>
-
-    <body>
-        <?php foreach($user as $users) :?>
-        <div class="min-vh-100 d-flex align-items-center bg-dark">
-            <div class="card w-75 m-auto p-3 bg-dark text-light">
-                <h3 class="text-center p-3">Akun</h3>
-                <form action="<?php  echo base_url('admin/aksi_ubah_akun')?>" method="post" class="row"
-                    enctype="multipart/form-data">
-                    <div class="mb-3 col-6">
-                        <label for="nama" class="form-label">Email</label>
-                        <input type="text" value="<?php echo $users->email ?>" class="form-control" id="nama"
-                            name="nama">
-                    </div>
-                    <div class="mb-3 col-6">
-                        <label for="nama" class="form-label">Username</label>
-                        <input type="text" class="form-control" value="<?php echo $users->username?>" id="nisn"
-                            name="nisn">
-                    </div>
-                    <div class="mb-3 col-6">
-                        <label for="nama" class="form-label">Password Baru</label>
-                        <input type="text" class="form-control" value="" id="nisn" name="nisn">
-                    </div>
-                    <div class="mb-3 col-6">
-                        <label for="nama" class="form-label">Konfirmasi Password Baru</label>
-                        <input type="text" class="form-control" value="" id="nisn" name="nisn">
-                    </div>
-                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                </form>
-            </div>
+    <div class="flex">
+        <div>
+            <?php $this->load->view('components/sidebar')?>
         </div>
-        <?php endforeach;?>
-    </body>
+
+        <div class="container mt-12">
+            <?php $this->load->view('components/navbar')?>
+
+            <body>
+                <?php foreach($user as $users) :?>
+                <div class="min-vh-100 d-flex align-items-center bg-dark">
+                    <div class="card w-75 m-auto p-3 bg-dark text-light">
+                        <h3 class="text-center p-3">Akun</h3>
+                        <form action="<?php  echo base_url('admin/aksi_ubah_akun')?>" method="post" class="row"
+                            enctype="multipart/form-data">
+                            <div class="mb-3 col-6">
+                                <label for="nama" class="form-label">Email</label>
+                                <input type="text" value="<?php echo $users->email ?>" class="form-control" id="nama"
+                                    name="nama">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="nama" class="form-label">Username</label>
+                                <input type="text" class="form-control" value="<?php echo $users->username?>" id="nisn"
+                                    name="nisn">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="nama" class="form-label">Password Baru</label>
+                                <input type="text" class="form-control" value="" id="nisn" name="nisn">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="nama" class="form-label">Konfirmasi Password Baru</label>
+                                <input type="text" class="form-control" value="" id="nisn" name="nisn">
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <?php endforeach;?>
+            </body>
 </body>
 
 </html
