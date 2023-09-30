@@ -77,10 +77,41 @@ class Admin extends CI_Controller {
    
   }
 
- public function hapus_siswa($id)
+//  public function hapus_siswa($id)
+//   {
+//    $this->m_model->delete('siswa', 'id_siswa', $id);
+//    redirect(base_url('admin/siswa'));
+//   }
+
+public function hapus_siswa($id)
   {
-   $this->m_model->delete('siswa', 'id_siswa', $id);
-   redirect(base_url('admin/siswa'));
+   $siswa = $this->m_model->get_by_id('siswa', 'id_siswa', $id)->row();
+   if($siswa){
+    if($siswa->foto !== 'User.png'){
+     $file_path = './images/siswa/' . $siswa->foto;
+
+     if(file_exists($file_path)){
+      if(unlink($file_path)){
+       //hapus file berhasil menggunakan model delete
+       $this->m_model->delete('siswa', 'id_siswa',$id);
+       redirect(base_url('admin/siswa'));
+      }else{
+       //gagal menghapus file
+       echo "gagal menghapus file.";
+      }
+     }else{
+      //file tidak di temukan
+      echo "File Tidak Di Temukan"; 
+     }
+    }else{
+     //Tanpa Hapus File User.png
+     $this->m_model->delete('siswa', 'id_siswa', $id);
+     redirect(base_url('admin/siswa'));
+    }
+   }else{
+    //Siswa Tidak Di Temukan
+    echo "Siswa Tidak Di Temukan";
+   }
   }
 
  public function ubah_siswa($id)
