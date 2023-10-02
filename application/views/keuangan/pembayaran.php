@@ -24,6 +24,10 @@
                     class="inline-block rounded bg-green-600 px-4 py-2 text-xs font-medium text-white hover:bg-pink-700">
                     <i></i> Tambah
                 </a>
+                <a href="<?php echo base_url('keuangan/export') ?>"
+                    class="inline-block rounded bg-orange-600 px-4 py-2 text-xs font-medium text-white hover:bg-violet-700">
+                    <i></i> export
+                </a>
                 <table class="divide-y-2 divide-gray-200 bg-white text-sm w-full px-2">
                     <thead>
                         <tr>

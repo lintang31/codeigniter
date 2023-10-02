@@ -28,8 +28,7 @@
 			"sed -i s/name{0}/name[0]/ vendor/mikey179/vfsstream/src/main/php/org/bovigo/vfs/vfsStream.php"
 		]
 	},
-	"require-dev": {
-		"mikey179/vfsstream": "1.6.*",
-		"phpunit/phpunit": "4.* || 5.* || 9.*"
-	}
+	"require": {
+        "phpoffice/phpspreadsheet": "^1.29"
+    }
 }
