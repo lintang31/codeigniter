@@ -78,6 +78,14 @@
                         <?php endforeach ?>
                     </tbody>
                 </table>
+                <form class="mt-5" method="post" enctype="multipart/from-data"
+                    action="<?= base_url('keuangan/import') ?>">
+                    <input type="file" name="file" />
+                    <input type="submit" name="import"
+                        class="inline-block rounded bg-violet-800 px-4 py-2 text-xs font-medium text-white hover:bg-violet-450"
+                        value="import" />
+
+                </form>
             </div>
         </div>
     </div>

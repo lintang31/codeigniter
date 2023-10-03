@@ -48,7 +48,9 @@
                             <option selected>Pilih Jenis Pembayaran</option>
                             <option value="SPP">SPP</option>
                             <option value="Uang Gedung">Uang Gedung</option>
-                            <option value="Uang Seragam">Uang Seragam</option>
+                            <option value="Uang Jajan">Uang Jajan</option>
+                            <option value="Uang Bensin">Uang Bensin</option>
+                            <option value="Uang Jaga-Jaga">Uang Jaga-Jaga</option>
                         </select>
                     </div>
                     <button type="submit"

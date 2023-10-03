@@ -22,6 +22,7 @@ class Keuangan extends CI_Controller
     {
         $this->load->view('keuangan/index');
     }
+    
     public function pembayaran()
     {
         $data['pembayaran'] = $this->m_model->get_data('pembayaran')->result();
@@ -97,12 +98,21 @@ class Keuangan extends CI_Controller
         $sheet->setCellValue('A3', 'ID');
         $sheet->setCellValue('B3', 'JENIS PEMBAYARAN');
         $sheet->setCellValue('C3', 'TOTAL PEMBAYARAN');
+        $sheet->setCellValue('D3', "SISWA");
+        $sheet->setCellValue('E3', "KELAS");
+        
 
         $sheet->getStyle('A3')->applyFromArray($style_col);
         $sheet->getStyle('B3')->applyFromArray($style_col);
         $sheet->getStyle('C3')->applyFromArray($style_col);
+        $sheet->getStyle('D3')->applyFromArray($style_col);
+        $sheet->getStyle('E3')->applyFromArray($style_col);
+        
+   
 
         $data_pembayaran = $this->m_model->get_data('pembayaran')->result();
+        $data['siswa'] = $this->m_model->get_data('siswa')->result();
+		$data['kelas'] = $this->m_model->get_data('kelas')->result();
 
         $no = 1;
         $numrow = 4;
@@ -110,10 +120,16 @@ class Keuangan extends CI_Controller
             $sheet->setCellValue('A' . $numrow, $data->id);
             $sheet->setCellValue('B' . $numrow, $data->jenis_pembayaran);
             $sheet->setCellValue('C' . $numrow, $data->total_pembayaran);
+            $nama_siswa = nama_siswa($data->id_siswa); 
+			$tingkat_kelas =tampil_full_kelas_byid(tampil_id_kelas_byid($data->id_siswa));
+			$sheet->setCellValue('D' . $numrow, $nama_siswa);
+			$sheet->setCellValue('E' . $numrow, $tingkat_kelas);
 
             $sheet->getStyle('A' . $numrow)->applyFromArray($style_row);
             $sheet->getStyle('B' . $numrow)->applyFromArray($style_row);
             $sheet->getStyle('C' . $numrow)->applyFromArray($style_row);
+            $sheet->getStyle('D' .$numrow)->applyFromArray($style_row);
+            $sheet->getStyle('E' .$numrow)->applyFromArray($style_row);
 
             $no++;
             $numrow++;
@@ -143,6 +159,36 @@ class Keuangan extends CI_Controller
 
         $writer = new Xlsx($spreadsheet);
         $writer->save('php://output');
+    }
+
+    public function  import()
+    {
+        if(isset($_FILES["file"]["name"])) {
+            $path = $_FILES["file"]["tmp_nama"];
+            $object =  PhpOffice\PhpSpreadsheet\IOFactorry::loadd($path);
+            foreach($object->getWorksheetIterator() as $worksheet)
+            {
+                $highestRow = $worksheet->getHestRow();
+                $highighestColumn = $worksheet->getHighestColumn();
+                for($row=2; $row<=$highestRow; $row++)
+                {
+                    $jenis_pembayaran =  $worksheet->getCellByColummAndRow(2,$row)->getValue();
+                    $total_pembayaran =  $worksheet->getCellByColummAndRow(3,$row)->getValue();
+                    $siswa =  $worksheet->getCellByColummAndRow(5,$row)->getValue();
+
+                    $get_id_by_nisn = $this->m_model->get_by_nisn($nisn);
+                    $data = array(
+                        'jenis_pembayaran' => $jenis_pembayaran,
+                        'total_pembayaran' => $total_pembayaran,
+                        'id_siswa' => $get_id_by_nisn
+                    );
+                    $this->m_model->tambah_data('pembayaran', $data);
+                }
+            }
+            redirect(base_url('keuangan/pembayaran'));
+        } else{
+            echo 'Invalid File';
+        }
     }
 
     // tambah

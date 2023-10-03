@@ -13,7 +13,7 @@
 
     <div class="flex-1 flex flex-col overflow-hidden">
         <header class="flex justify-between items-center p-4 bg-white border-b-2 border-gray-100">
-            <h1 class="text-4xl">Ubah Pembayaran💸</h1>
+            <h1 class="text-4xl">Ubah Pembayaran 💸</h1>
         </header>
 
         <div class="my-8 mx-4">
