@@ -11,6 +11,16 @@
 
 
 </head>
+<script>
+function formToggle(ID) {
+    var element = document.getElementById(ID);
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
+</script>
 
 <body>
     <div class="flex">
@@ -78,14 +88,47 @@
                         <?php endforeach ?>
                     </tbody>
                 </table>
-                <form class="mt-5" method="post" enctype="multipart/from-data"
-                    action="<?= base_url('keuangan/import') ?>">
+                <!-- <form class="mt-5" method="post" enctype="multipart/from-data">
                     <input type="file" name="file" />
                     <input type="submit" name="import"
                         class="inline-block rounded bg-violet-800 px-4 py-2 text-xs font-medium text-white hover:bg-violet-450"
                         value="import" />
 
-                </form>
+                </form> -->
+
+                <!-- Display status message -->
+                <?php if(!empty($statusMsg)){ ?>
+                <div class="col-xs-12 p-3">
+                    <div class="alert <?php echo $statusType; ?>"><?php echo $statusMsg; ?></div>
+                </div>
+                <?php } ?>
+
+                <!-- Import link -->
+                <div class="mt-5">
+                    <div class="float-end">
+                        <a href="javascript:void(0);" class="btn btn-success btn-sm"
+                            onclick="formToggle('importFrm');"><i class="plus"></i> Import Excel</a>
+                    </div>
+                </div>
+                <!-- Excel file upload form -->
+                <!-- <div class="mt-3" id="importFrm" style="display: none;">
+                    <form method="post" action="<?= base_url('keuangan/import')?>" enctype="multipart/form-data">
+                        <input type="file" name="file" />
+                        <input type="submit" name="import"
+                            class="inline-block rounded bg-violet-800 px-4 py-2 text-xs font-medium text-white hover:bg-violet-450"
+                            value="import" />
+                    </form>
+                </div> -->
+                <!-- Excel file upload form -->
+                <div class="mt-3" id="importFrm" style="display: none;">
+                    <form method="post" action="<?= base_url('keuangan/import')?>" enctype="multipart/form-data">
+                        <input type="file" name="file" />
+                        <input type="submit" name="import"
+                            class="inline-block rounded bg-green-600 px-4 py-2 text-xs font-medium text-white hover:bg-green-450"
+                            value="Import" />
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>

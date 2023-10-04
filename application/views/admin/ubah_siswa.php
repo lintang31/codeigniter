@@ -59,7 +59,7 @@
                                     <label class="block text-gray-700 text-sm font-bold mb-2" for="kelas">
                                         Kelas
                                     </label>
-                                    <select name="kelas" id="kelas"
+                                    <select name="id_kelas" id="kelas"
                                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                         <option selected value="<?php echo $data_siswa->id_kelas ?>">
                                             <?php echo tampil_full_kelas_byid($data_siswa->id_kelas) ?>

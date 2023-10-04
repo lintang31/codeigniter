@@ -37,14 +37,15 @@ class M_model extends CI_Model{
     {
         $this->db->select('id_siswa');
         $this->db->from('siswa');
-        $this->db->where('nisn', $nisn);
+        $this->db->where('nisn',$nisn);
         $query = $this->db->get();
 
-        if ($query->num_rows() > 0) {
-            $result =$query->row();
+        if($query->num_rows() > 0){
+            $result = $query->row();
             return $result->id_siswa;
         } else {
-            return false;
+            return false ;
         }
     }
+    
 }

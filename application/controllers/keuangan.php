@@ -3,7 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-
 class Keuangan extends CI_Controller
 {
 
@@ -161,36 +160,40 @@ class Keuangan extends CI_Controller
         $writer->save('php://output');
     }
 
-    public function  import()
+    public function import()
     {
-        if(isset($_FILES["file"]["name"])) {
-            $path = $_FILES["file"]["tmp_nama"];
-            $object =  PhpOffice\PhpSpreadsheet\IOFactorry::loadd($path);
-            foreach($object->getWorksheetIterator() as $worksheet)
-            {
-                $highestRow = $worksheet->getHestRow();
-                $highighestColumn = $worksheet->getHighestColumn();
-                for($row=2; $row<=$highestRow; $row++)
-                {
-                    $jenis_pembayaran =  $worksheet->getCellByColummAndRow(2,$row)->getValue();
-                    $total_pembayaran =  $worksheet->getCellByColummAndRow(3,$row)->getValue();
-                    $siswa =  $worksheet->getCellByColummAndRow(5,$row)->getValue();
+        if (isset($_FILES['file']['name'])) {
+            $path = $_FILES['file']['tmp_name'];
+            $object = PhpOffice\PhpSpreadsheet\IOFactory::LOAD($path);
+            foreach ($object->getWorksheetIterator() as $worksheet) {
+                $highestRow = $worksheet->getHighestRow();
+                $highestColumn = $worksheet->getHighestColumn();
+                for ($row = 2; $row <= $highestRow; $row++) {
+                    $jenis_pembayaran = $worksheet
+                        ->getCellByColumnAndRow(2, $row)
+                        ->getValue();
+                    $total_pembayaran = $worksheet
+                        ->getCellByColumnAndRow(3, $row)
+                        ->getValue();
+                    $nisn = $worksheet
+                        ->getCellByColumnAndRow(5, $row)
+                        ->getValue();
 
                     $get_id_by_nisn = $this->m_model->get_by_nisn($nisn);
-                    $data = array(
+                    $data = [
                         'jenis_pembayaran' => $jenis_pembayaran,
                         'total_pembayaran' => $total_pembayaran,
-                        'id_siswa' => $get_id_by_nisn
-                    );
+                        'id_siswa' => $get_id_by_nisn,
+                    ];
                     $this->m_model->tambah_data('pembayaran', $data);
                 }
             }
             redirect(base_url('keuangan/pembayaran'));
-        } else{
+        } else {
             echo 'Invalid File';
         }
     }
-
+    
     // tambah
     public function tambah_pembayaran()
     {
