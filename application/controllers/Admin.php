@@ -306,7 +306,7 @@ public function guru()
 {
     $data['guru'] = $this->m_model->get_data('guru')->result();
     $data['kelas'] = $this->m_model->get_data('kelas')->result();
-    $data['guru'] = $this->m_model->get_data('guru')->result();
+    $data['mapel'] = $this->m_model->get_data('mapel')->result();
     $this->load->view('admin/guru', $data);
 }
 
